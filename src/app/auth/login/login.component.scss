@@ -1,0 +1,26 @@
+%flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  height: calc(100% - 60px);
+  @extend %flex;
+
+  &__form{
+    @extend %flex;
+    width: 100%;
+
+    &--field{
+      width: 30%;
+    }
+  }
+
+  &__title{
+    padding: 0px 50px 50px 50px;
+    text-align: center;
+  }
+}

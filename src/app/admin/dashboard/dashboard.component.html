@@ -1,0 +1,33 @@
+<button class="button-logout" mat-icon-button (click)="logout()">
+  <mat-icon>logout</mat-icon>
+</button>
+<section class="dsb-container" *ngIf="!loading">
+  <h1 class="dsb-container__title">Estos son algunos personajes de rickandmortyapi.com</h1>
+  <div class="dsb-container__characters">
+    <mat-card class="dsb-container__characters--card" *ngFor="let character of characters.results">
+      <mat-card-header>
+        <mat-card-title class="text">{{character.name}}</mat-card-title>
+        <mat-card-subtitle class="text">{{character.species}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [ngSrc]="character.image" width="200" height="200">
+      <mat-card-content>
+        <p>{{character.origin.name}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+<section class="dsb-container">
+  <h1 class="dsb-container__title">Estos son algunos Episodios de rickandmortyapi.com</h1>
+  <div class="dsb-container__episodes">
+    <mat-card class="dsb-container__characters--card" *ngFor="let episode of episodes.results">
+      <mat-card-header>
+        <mat-card-title class="text">{{episode.name}}</mat-card-title>
+        <mat-card-subtitle class="text">{{episode.air_date}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image [ngSrc]="episode.episode" width="200" height="200"> -->
+      <mat-card-content>
+        <p>{{episode.url}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

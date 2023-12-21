@@ -1,0 +1,16 @@
+<section class="container">
+  <div class="container__title">
+      <h1>Bienvenido al sitio, para entrar debes ingresar tus credenciales de administrador</h1>
+  </div>
+  <form class="container__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="container__form--field" appearance="outline">
+      <input formControlName="name" matInput placeholder="Usuario">
+      <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="container__form--field" appearance="outline">
+      <input formControlName="password" matInput placeholder="Contraseña">
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+    <button class="container__form--field" [disabled]="loginForm.invalid" mat-flat-button color="primary">LOGIN</button>
+  </form>
+</section>
